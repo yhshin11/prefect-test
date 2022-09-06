@@ -19,9 +19,9 @@ import logging
 )
 def shell_flow(messages):
     logger = get_run_logger()
-    futures = []
     for message in messages:
-        command = f"python script.py {10} {message}"
+        command = f"python script.py {10} {message} 2>&1 | tee {message}.txt"
+        logger.info(f"Running command: {command}")
         shell_run_command.submit(command=command, return_all=True)
 
 

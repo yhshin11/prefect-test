@@ -9,6 +9,6 @@ args = parser.parse_args()
 
 for i in range(args.timeout):
     time.sleep(1)
-    print(f"Been running task for {i} seconds... Repeating message: {args.message}")
+    print(f"Been running task for {i} seconds... Repeating message: {args.message}", flush=True)
 print("Finished running task!")
 
